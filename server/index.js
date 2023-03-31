@@ -8,7 +8,6 @@ import serverRoutes from './routes/serverRoutes.js';
 
 /* ======configure env====== */
 dotenv.config();
-const channel = process.env.PORT;
 
 /* ======initialise application===== */
 
@@ -25,9 +24,6 @@ app.use('/api/v1/dalle', serverRoutes);
 const startServer = async () => {
 	try {
 		db(process.env.MONGODB_URL);
-		app.listen(channel, () =>
-			console.log(`Server running on port http://localhost:${channel}`)
-		);
 	} catch (error) {
 		console.log(error);
 	}
