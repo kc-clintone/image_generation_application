@@ -17,9 +17,9 @@ const App = () => {
 					>
 						Post
 					</Link>
-					<Link className='font-inter font-medium border bg-[#ffffff] text-black px-4 py-2 rounded-md border-[#e6ebf4] sm:'>
+					{/*<Link className='font-inter font-medium border bg-[#ffffff] text-black px-4 py-2 rounded-md border-[#e6ebf4] sm:'>
 						Sign in
-					</Link>
+	</Link>*/}
 				</div>
 			</header>
 			<main className='sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]'>
