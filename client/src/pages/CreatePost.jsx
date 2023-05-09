@@ -28,10 +28,11 @@ const CreatePost = () => {
 		if (form.prompt) {
 			try {
 				setProcessingImage(true);
-				const response = await fetch('https://snap-ai-0gv8.onrender.com/api/v1/dalle', {
+				const response = await fetch('https://snapai-6mpe.onrender.com', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
+						'Access-Control-Allow-Origin': 'no-cors',
 					},
 					body: JSON.stringify({
 						prompt: form.prompt,
@@ -56,10 +57,11 @@ const CreatePost = () => {
 		if (form.prompt && form.photo) {
 			setLoading(true);
 			try {
-				const response = await fetch('https://snap-ai-0gv8.onrender.com/api/v1/post', {
+				const response = await fetch('https://snapai-6mpe.onrender.com', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
+						'Access-Control-Allow-Origin': 'no-cors',
 					},
 					body: JSON.stringify({ ...form }),
 				});

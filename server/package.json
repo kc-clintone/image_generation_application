@@ -1,5 +1,6 @@
 {
 	"name": "server",
+	"proxy": "http://127.0.0.1:5173",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",

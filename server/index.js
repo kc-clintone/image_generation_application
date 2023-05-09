@@ -1,14 +1,14 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
-import db from './database/connect.js';
+import connectDB from './database/connect.js';
 
 import postRoutes from './routes/postRoutes.js';
 import serverRoutes from './routes/serverRoutes.js';
 
 /* ======configure env====== */
 dotenv.config();
-
+const port = 'https://snapai-6mpe.onrender.com';
 /* ======initialise application===== */
 
 const app = express();
@@ -23,9 +23,12 @@ app.use('/api/v1/dalle', serverRoutes);
 
 const startServer = async () => {
 	try {
-		db(process.env.MONGODB_URL);
+		connectDB(process.env.MONGODB_URL);
+		app.listen(port, () =>
+			console.log(`Server running on port: http://localhost:${port}`)
+		);
 	} catch (error) {
-		console.log(error);
+		console.log('Something went wrong!');
 	}
 };
 
