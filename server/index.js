@@ -8,7 +8,7 @@ import serverRoutes from './routes/serverRoutes.js';
 
 /* ======configure env====== */
 dotenv.config();
-const port = 'https://snapai-6mpe.onrender.com';
+const port = '5713';
 /* ======initialise application===== */
 
 const app = express();
