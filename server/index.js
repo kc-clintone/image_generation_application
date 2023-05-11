@@ -16,11 +16,6 @@ app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
 /* =====endpoints===== */
-app.use('/', (req, res) => {
-	/** testing route */
-	res.send('*****server running*****');
-});
-
 app.use('/api/v1/post', postRoutes);
 app.use('/api/v1/dalle', serverRoutes);
 
