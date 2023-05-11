@@ -12,6 +12,7 @@ const configuration = new Configuration({
 });
 // ----initialize the router-----
 const openai = new OpenAIApi(configuration);
+
 // -----create routes to openai------
 router.route('/').post(async (req, res) => {
 	try {

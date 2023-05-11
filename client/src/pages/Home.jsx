@@ -23,13 +23,16 @@ const Home = () => {
 		setLoading(true);
 
 		try {
-			const response = await fetch('https://snapai-6mpe.onrender.com', {
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json',
-					'Access-Control-Allow-Origin': 'no-cors',
-				},
-			});
+			const response = await fetch(
+				'https://snapai-6mpe.onrender.com/api/v1/post',
+				{
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json',
+						'Access-Control-Allow-Origin': 'no-cors',
+					},
+				}
+			);
 
 			if (response.ok) {
 				const result = await response.json();
