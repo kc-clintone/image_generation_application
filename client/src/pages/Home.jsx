@@ -16,7 +16,6 @@ const Home = () => {
 	const [allPosts, setAllPosts] = useState(null);
 
 	const [searchText, setSearchText] = useState('');
-	const [searchTimeout, setSearchTimeout] = useState(null);
 	const [searchedResults, setSearchedResults] = useState(null);
 
 	const fetchPosts = async () => {
@@ -50,20 +49,17 @@ const Home = () => {
 	}, []);
 
 	const handleSearchChange = (e) => {
-		clearTimeout(searchTimeout);
 		setSearchText(e.target.value);
-
-		setSearchTimeout(
-			setTimeout(() => {
-				const searchResult = allPosts.filter(
-					(item) =>
-						item.name.toLowerCase().includes(searchText.toLowerCase()) ||
-						item.prompt.toLowerCase().includes(searchText.toLowerCase())
-				);
-				setSearchedResults(searchResult);
-			}, 500)
-		);
 	};
+
+	useEffect(() => {
+		const searchResult = allPosts.filter(
+			(item) =>
+				item.name.toLowerCase().includes(searchText.toLowerCase()) ||
+				item.prompt.toLowerCase().includes(searchText.toLowerCase())
+		);
+		setSearchedResults(searchResult);
+	}, [allPosts, searchText]);
 
 	return (
 		<section className='max-w-7xl mx-auto'>
@@ -100,7 +96,7 @@ const Home = () => {
 						</p>
 						{searchText && (
 							<h2 className='font-medium text-[#666e75] text-xl mb-3'>
-								Showing Resuls for{' '}
+								Showing Results for{' '}
 								<span className='text-[#222328]'>{searchText}</span>:
 							</h2>
 						)}

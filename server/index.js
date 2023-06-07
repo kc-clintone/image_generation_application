@@ -8,7 +8,7 @@ import serverRoutes from './routes/serverRoutes.js';
 
 /* ======configure env====== */
 dotenv.config();
-const port = '5713';
+const port = 5713;
 /* ======initialise application===== */
 
 const app = express();
@@ -28,7 +28,7 @@ const startServer = async () => {
 			console.log(`Server running on port: http://localhost:${port}`)
 		);
 	} catch (error) {
-		console.log('Something went wrong!');
+		console.error('An error occurred while starting the server:', error);
 	}
 };
 

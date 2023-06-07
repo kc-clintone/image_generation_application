@@ -10,14 +10,12 @@ const App = () => {
 				<Link to='/'>
 					<img src={logo} alt='AI.Snap Logo' className='w-28 object-contain' />
 				</Link>
-				<div className='w-[11%] flex justify-between items-center gap-1'>
-					<Link
-						to='create-post'
-						className='font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md'
-					>
-						Post
-					</Link>
-				</div>
+				<Link
+					to='create-post'
+					className='font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md'
+				>
+					Post
+				</Link>
 			</header>
 			<main className='sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]'>
 				<Routes>
