@@ -8,7 +8,7 @@ import serverRoutes from './routes/serverRoutes.js';
 
 /* ======configure env====== */
 dotenv.config();
-const port = 5713;
+const port = process.env.PORT || 5713;
 /* ======initialise application===== */
 
 const app = express();
