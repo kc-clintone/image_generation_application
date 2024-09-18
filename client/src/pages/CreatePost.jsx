@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../components';
-import preview from '../assets/preview.jpg';
+import preview from '../assets/preview.png';
 
 const CreatePost = () => {
 	const navigate = useNavigate();
